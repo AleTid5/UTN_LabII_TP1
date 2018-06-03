@@ -1,8 +1,8 @@
 //#############################################################################
-// ARCHIVO             : nombre de archivo.extension
-// AUTOR/ES            : nombre/s de autor/es
+// ARCHIVO             : main.cpp
+// AUTOR/ES            : Alejandro Tidele
 // VERSION             : 0.01 beta.
-// FECHA DE CREACION   : dd/mm/aaaa.
+// FECHA DE CREACION   : 03/06/2018.
 // ULTIMA ACTUALIZACION: dd/mm/aaaa.
 // LICENCIA            : GPL (General Public License) - Version 3.
 //
@@ -31,9 +31,7 @@
 // COMPILADOR          : GNU GCC Compiler (Linux) / MinGW (Windows).
 // LICENCIA            : GPL (General Public License) - Version 3.
 //=============================================================================
-// DESCRIPCION:
-//              Breve explicacion sobre el contenido del archivo.
-//
+// DESCRIPCION: Archivo principal donde se ejecutan las funciones del juego.
 ////////////////////////////////////////////////////////////////////////////////
 
 //*****************************************************************************
@@ -63,7 +61,6 @@
 //=============================================================================
 #include <iostream> // Libreria de flujos de  Entrada/Salida  que contiene  los
                     // objetos cin, cout y endl.
-
 #include <cstdlib>  // Libreria estandar que contiene la funcion exit().
 
 //*****************************************************************************
