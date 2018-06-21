@@ -48,7 +48,8 @@ TP: 2 - Juego de consola: Memotest.
 		<Unit filename="CSYSTEM/csystem.h" />
 		<Unit filename="LICENCIA GPL/Licencia GPL (traduccion NO OFICIAL - castellano argentina).txt" />
 		<Unit filename="LICENCIA GPL/Licencia GPL original (ingles).txt" />
-		<Unit filename="MIDDLEWARE/middleware.h" />
+		<Unit filename="MIDDLEWARE/GameController.h" />
+		<Unit filename="MIDDLEWARE/MainController.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

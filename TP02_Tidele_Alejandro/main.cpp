@@ -66,22 +66,21 @@
 //*****************************************************************************
 //                             INCLUSIONES PERSONALES
 //=============================================================================
-#include "CSYSTEM/csystem.h" // Libreria para multiplataforma.
-//==============================================================================
-// DECLARACION DEL ESPACIO DE NOMBRES POR DEFECTO
-//------------------------------------------------------------------------------
-using namespace std;
-
-
+#include "MIDDLEWARE/MainController.h" // Libreria que controla las acciones del
+                                       // usuario.
 //==============================================================================
 // FUNCION PRINCIPAL - PUNTO DE INICIO DEL PROYECTO
 //------------------------------------------------------------------------------
 int main()
 {
+    //_system::welcome();
+    _system::showMenu();
+    _system::swMenu();
 
     //--------------------------------------------------------------------------
     // FIN DE LA FUNCION main() SIN ERRORES.
     //--------------------------------------------------------------------------
+
     return 0;
 }
 
