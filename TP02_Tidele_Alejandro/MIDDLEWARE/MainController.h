@@ -25,8 +25,8 @@ namespace _system
 //***************************************************************************
 // DEFINICION DE LOS PROTOTIPOS A UTILIZAR EN EL SISTEMA
 //===========================================================================
-void swSubMenu();
-void swMenu();
+void takeSecondaryDecision();
+void takeMainDecision();
 //***************************************************************************
 // DEFINICION DE LAS FUNCIONES
 //===========================================================================
@@ -92,7 +92,7 @@ void welcome()
 }
 
 //---------------------------------------------------------------------------
-// FUNCION   : void byebye()
+// FUNCION   : void goodbye()
 // ACCION    : Muestra una pantalla de despedida del sistema
 // PARAMETROS: Nada.
 // DEVUELVE  : Nada.
@@ -101,11 +101,11 @@ void goodbye()
 {
     sys::cls();
     cout << endl;
-    cout << " °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°" << endl;
-    cout << " °°                                        °°" << endl;
-    cout << " °°             A  D  I  O  S              °°" << endl;
-    cout << " °°                                        °°" << endl;
-    cout << " °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°" << endl;
+    cout << "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°" << endl;
+    cout << "\t\t°°                                        °°" << endl;
+    cout << "\t\t°°              A  D  I  O  S             °°" << endl;
+    cout << "\t\t°°                                        °°" << endl;
+    cout << "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°" << endl;
     sys::msleep(2);
 
     exit(0);
@@ -121,17 +121,17 @@ void showMenu()
 {
     sys::cls();
     cout << endl;
-    cout << "°===================================================°" << endl;
-    cout << "|                     MEMOTEST                      |" << endl;
-    cout << "°===================================================°" << endl;
-    cout << "|                                                   |" << endl;
-    cout << "|                A - JUGAR                          |" << endl;
-    cout << "|                B - AYUDA                          |" << endl;
-    cout << "|                Z - SALIR                          |" << endl;
-    cout << "|                                                   |" << endl;
-    cout << "°===================================================°" << endl;
+    cout << "\t\t°===================================================°" << endl;
+    cout << "\t\t|                     MEMOTEST                      |" << endl;
+    cout << "\t\t°===================================================°" << endl;
+    cout << "\t\t|                                                   |" << endl;
+    cout << "\t\t|                    A - JUGAR                      |" << endl;
+    cout << "\t\t|                    B - AYUDA                      |" << endl;
+    cout << "\t\t|                    Z - SALIR                      |" << endl;
+    cout << "\t\t|                                                   |" << endl;
+    cout << "\t\t°===================================================°" << endl;
 
-    swMenu();
+    takeMainDecision();
 }
 
 //---------------------------------------------------------------------------
@@ -144,18 +144,18 @@ void showSubMenu()
 {
     sys::cls();
     cout << endl;
-    cout << "°===================================================°" << endl;
-    cout << "|                     MEMOTEST                      |" << endl;
-    cout << "°===================================================°" << endl;
-    cout << "|                                                   |" << endl;
-    cout << "|                A - FACIL                          |" << endl;
-    cout << "|                B - MEDIO                          |" << endl;
-    cout << "|                C - DIFICIL                        |" << endl;
-    cout << "|                Z - SALIR                          |" << endl;
-    cout << "|                                                   |" << endl;
-    cout << "°===================================================°" << endl;
+    cout << "\t\t°===================================================°" << endl;
+    cout << "\t\t|                     MEMOTEST                      |" << endl;
+    cout << "\t\t°===================================================°" << endl;
+    cout << "\t\t|                                                   |" << endl;
+    cout << "\t\t|                    A - FACIL                      |" << endl;
+    cout << "\t\t|                    B - MEDIO                      |" << endl;
+    cout << "\t\t|                    C - DIFICIL                    |" << endl;
+    cout << "\t\t|                    Z - SALIR                      |" << endl;
+    cout << "\t\t|                                                   |" << endl;
+    cout << "\t\t°===================================================°" << endl;
 
-    swSubMenu();
+    takeSecondaryDecision();
 }
 
 //---------------------------------------------------------------------------
@@ -168,72 +168,79 @@ void showHelp()
 {
     sys::cls();
     cout << endl;
-    cout << "°===================================================°" << endl;
-    cout << "|                     MEMOTEST                      |" << endl;
-    cout << "°===================================================°" << endl;
-    cout << "|                                                   |" << endl;
-    cout << "|  El juego consiste en un tablero con fichas       |" << endl;
-    cout << "|  dadas vueltas a ser descubieras.                 |" << endl;
-    cout << "|  Segun la dificultad se va a tener un nro de      |" << endl;
-    cout << "|  movimientos predeterminados:                     |" << endl;
-    cout << "|       * FACIL   - tablero 4x4 - 20 movimientos    |" << endl;
-    cout << "|       * MEDIO   - tablero 6x6 - 40 movimientos    |" << endl;
-    cout << "|       * DIFICIL - tablero 8x8 - 60 movimientos    |" << endl;
-    cout << "|                                                   |" << endl;
-    cout << "|  Se debe ingresar una letra para la fila y un     |" << endl;
-    cout << "|  numero para la columna deseada a descubrir.      |" << endl;
-    cout << "|  Luego se debe seleccionar otra ficha y si ambas  |" << endl;
-    cout << "|  coinciden no se descuenta movimiento.            |" << endl;
-    cout << "|                                                   |" << endl;
-    cout << "|  Si te quedas sin movimientos, PERDES.            |" << endl;
-    cout << "|  Si descubris todas las fichas, GANAS.            |" << endl;
-    cout << "|                                                   |" << endl;
-    cout << "|  Como ayuda, existe la tecla FLASH, la cual       |" << endl;
-    cout << "|  descubre el tablero con las respuestas por       |" << endl;
-    cout << "|  unos pocos segundos.                             |" << endl;
-    cout << "|  La misma se puede activar apretando la tecla Z   |" << endl;
-    cout << "|  IMPORTANTE: solo se puede usar una vez por       |" << endl;
-    cout << "|              partida a la tecla flash.            |" << endl;
-    cout << "|                                                   |" << endl;
-    cout << "°===================================================°" << endl;
+    cout << "\t\t°===================================================°" << endl;
+    cout << "\t\t|                     MEMOTEST                      |" << endl;
+    cout << "\t\t°===================================================°" << endl;
+    cout << "\t\t|                                                   |" << endl;
+    cout << "\t\t|  El juego consiste en un tablero con fichas       |" << endl;
+    cout << "\t\t|  dadas vueltas a ser descubieras.                 |" << endl;
+    cout << "\t\t|  Segun la dificultad se va a tener un nro de      |" << endl;
+    cout << "\t\t|  movimientos predeterminados:                     |" << endl;
+    cout << "\t\t|       * FACIL   - tablero 4x4 - 20 movimientos    |" << endl;
+    cout << "\t\t|       * MEDIO   - tablero 6x6 - 40 movimientos    |" << endl;
+    cout << "\t\t|       * DIFICIL - tablero 8x8 - 60 movimientos    |" << endl;
+    cout << "\t\t|                                                   |" << endl;
+    cout << "\t\t|  Se debe ingresar una letra para la fila y un     |" << endl;
+    cout << "\t\t|  numero para la columna deseada a descubrir.      |" << endl;
+    cout << "\t\t|  Luego se debe seleccionar otra ficha y si ambas  |" << endl;
+    cout << "\t\t|  coinciden no se descuenta movimiento.            |" << endl;
+    cout << "\t\t|                                                   |" << endl;
+    cout << "\t\t|  Si te quedas sin movimientos, PERDES.            |" << endl;
+    cout << "\t\t|  Si descubris todas las fichas, GANAS.            |" << endl;
+    cout << "\t\t|                                                   |" << endl;
+    cout << "\t\t|  Como ayuda, existe la tecla FLASH, la cual       |" << endl;
+    cout << "\t\t|  descubre el tablero con las respuestas por       |" << endl;
+    cout << "\t\t|  unos pocos segundos.                             |" << endl;
+    cout << "\t\t|  La misma se puede activar apretando la tecla Z   |" << endl;
+    cout << "\t\t|  IMPORTANTE: solo se puede usar una vez por       |" << endl;
+    cout << "\t\t|              partida a la tecla flash.            |" << endl;
+    cout << "\t\t|                                                   |" << endl;
+    cout << "\t\t°===================================================°" << endl;
     cout << endl;
     cin.ignore();
-    cout << "Presione enter para volver al menu." << endl;
+    cout << "\t\tPresione enter para volver al menu." << endl;
     cin.get();
 
     // Despues de leer la ayuda, tiene que volver al menu.
     showMenu();
 }
 
+//---------------------------------------------------------------------------
+// FUNCION   : void error(int origin
+// ACCION    : Muestra un mensaje de error y redirige a la opcion que sea necesaria.
+// PARAMETROS: int origin -> Determina el origen de donde es llamado.
+// DEVUELVE  : Nada.
+//---------------------------------------------------------------------------
 void error(int origin)
 {
-    cout << "Opcion incorrecta, intente nuevamente.";
+    cout << "\t\tOpcion incorrecta, intente nuevamente.";
     cin.ignore();
     cin.get();
     origin == 1 ? showMenu() : showSubMenu();
 }
 
-
 //---------------------------------------------------------------------------
-// FUNCION   : void swSubMenu()
+// FUNCION   : void takeSecondaryDecision()
 // ACCION    : Analiza la opcion elegida y toma la decision que sea correspondiente.
 // PARAMETROS: Nada
 // DEVUELVE  : Nada.
 //---------------------------------------------------------------------------
-void swSubMenu()
+void takeSecondaryDecision()
 {
     bool getOut=false;
 
     while (!getOut)
     {
-        char op;
+        char _option[1];
         int turn = 20, aux;
         bool mustShow = true, mustStop = false,  endOfGame = false;
-        cout << "Ingrese una opcion: ";
-        cin >> op;
-        cin.ignore();
+        cout << "\t\tIngrese una opcion: ";
+        cin >> _option;
 
-        switch (op)
+        if (strlen(_option) > 1)
+            error(2);
+
+        switch (_option[0])
         {
         case 'a':
         case 'A':
@@ -298,18 +305,21 @@ void swSubMenu()
 }
 
 //---------------------------------------------------------------------------
-// FUNCION   : void swMenu()
-// ACCION    : analiza la opcion elegida y realiza una accion segun el caso.
-// PARAMETROS: nada.
-// DEVUELVE  : la opcion elegida.
+// FUNCION   : void takeMainDecision()
+// ACCION    : Analiza la opcion elegida y realiza una accion segun el caso.
+// PARAMETROS: Nada.
+// DEVUELVE  : La opcion elegida.
 //---------------------------------------------------------------------------
-void swMenu()
+void takeMainDecision()
 {
-    char op;
-    cout << "Ingrese una opcion: ";
-    cin >> op;
+    char _option[1];
+    cout << "\t\tIngrese una opcion: ";
+    cin >> _option;
 
-    switch (op)
+    if (strlen(_option) > 1)
+        error(1);
+
+    switch (_option[0])
     {
     case 'a':
     case 'A':

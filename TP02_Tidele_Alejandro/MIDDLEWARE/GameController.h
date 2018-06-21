@@ -24,9 +24,9 @@ int boundSize = 4;
 const int maxBound = 8;
 char letters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
 /***************************************************************************************
-// ESTRUCTURA: struct card
-// ACCION    : Estructura del componente de cada carta.
-// PARAMETROS: char card  -> contiene el caracter de la carta.
+// ESTRUCTURA : struct card
+// ACCION     : Estructura del componente de cada carta.
+// COMPONENTES: char card  -> contiene el caracter de la carta.
 //             char reverse -> contiene un simbolo de incognito.
 //             bool mostrar -> booleano para definir el mostrar o no un caracter
 *****************************************************************************************/
@@ -38,133 +38,147 @@ struct card
 };
 
 /***************************************************************************************
-// ESTRUCTURA: void notExists()
+// FUNCION   : void notExists()
 // ACCION    : Cartel de anuncio durante el juego.
 // PARAMETROS: Ninguno
-// DEVUELVE:   NADA
+// DEVUELVE  : NADA
 *****************************************************************************************/
 void notExists()
 {
-    cout << endl << "บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
-    cout << endl << "บบ   Posicion inexistente, intentelo de nuevo  บบ";
-    cout << endl << "บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
+    cout << endl << "\t\tบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
+    cout << endl << "\t\tบบ   Posicion inexistente, intentelo de nuevo  บบ";
+    cout << endl << "\t\tบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
 }
 
 /***************************************************************************************
-// ESTRUCTURA: void incorrect()
+// FUNCION   : void incorrect()
 // ACCION    : Cartel de anuncio durante el juego.
 // PARAMETROS: Ninguno
-// DEVUELVE:   NADA
+// DEVUELVE  : NADA
 *****************************************************************************************/
 void incorrect()
 {
-    cout << endl << "บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
-    cout << endl << "บบ     No acertaste... Intentalo de nuevo      บบ";
-    cout << endl << "บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
+    cout << endl << "\t\tบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
+    cout << endl << "\t\tบบ     No acertaste... Intentalo de nuevo      บบ";
+    cout << endl << "\t\tบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
 }
 
 /***************************************************************************************
-// ESTRUCTURA: void usedCard()
+// FUNCION   : void usedCard()
 // ACCION    : Cartel de anuncio durante el juego.
 // PARAMETROS: Ninguno
-// DEVUELVE:   NADA
+// DEVUELVE  : NADA
 *****************************************************************************************/
 void usedCard()
 {
-    cout << endl << "บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
-    cout << endl << "บบ       Esta carta ya fue descubierta         บบ";
-    cout << endl << "บบ             selecciona otra                 บบ";
-    cout << endl << "บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
+    cout << endl << "\t\tบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
+    cout << endl << "\t\tบบ       Esta carta ya fue descubierta         บบ";
+    cout << endl << "\t\tบบ             selecciona otra                 บบ";
+    cout << endl << "\t\tบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
 }
 
 /***************************************************************************************
-// ESTRUCTURA: void noMoreFlash()
+// FUNCION   : void noMoreFlash()
 // ACCION    : Cartel de anuncio durante el juego.
 // PARAMETROS: Ninguno
-// DEVUELVE:   NADA
+// DEVUELVE  : NADA
 *****************************************************************************************/
 void noMoreFlash()
 {
-    cout << endl << "บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
-    cout << endl << "บบ       No puedes volver a utilizar la        บบ";
-    cout << endl << "บบ             opcion FLASH                    บบ";
-    cout << endl << "บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
+    cout << endl << "\t\tบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
+    cout << endl << "\t\tบบ       No puedes volver a utilizar la        บบ";
+    cout << endl << "\t\tบบ             opcion FLASH                    บบ";
+    cout << endl << "\t\tบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
 }
 
 /***************************************************************************************
-// ESTRUCTURA: void hit()
+// FUNCION   : void hit()
 // ACCION    : Cartel de anuncio durante el juego.
 // PARAMETROS: Ninguno
-// DEVUELVE:   NADA
+// DEVUELVE  : NADA
 *****************************************************************************************/
 void hit()
 {
-    cout << endl << "บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
-    cout << endl << "บบ          ACERTASTE!!, bien hecho            บบ";
-    cout << endl << "บบ             Continua jugando                บบ";
-    cout << endl << "บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
+    cout << endl << "\t\tบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
+    cout << endl << "\t\tบบ          ACERTASTE!!, bien hecho            บบ";
+    cout << endl << "\t\tบบ             Continua jugando                บบ";
+    cout << endl << "\t\tบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ";
 }
 
 /***************************************************************************************
-// ESTRUCTURA: void gameWon()
+// FUNCION   : void gameWon()
 // ACCION    : Cartel de anuncio durante el juego.
 // PARAMETROS: Ninguno
-// DEVUELVE:   NADA
+// DEVUELVE  : NADA
 *****************************************************************************************/
 void gameWon()
 {
-    cout<<endl;
-    cout<<" ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐ"<<endl;
-    cout<<" ฐฐ                                       ฐฐ"<<endl;
-    cout<<" ฐฐ          (: G A N A S T E :)          ฐฐ"<<endl;
-    cout<<" ฐฐ                                       ฐฐ"<<endl;
-    cout<<" ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐ"<<endl;
-    cout<<endl;
+	cout << endl;
+    cout << endl << "\t\tฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐ";
+    cout << endl << "\t\tฐฐ                                       ฐฐ";
+    cout << endl << "\t\tฐฐ          (: G A N A S T E :)          ฐฐ";
+    cout << endl << "\t\tฐฐ                                       ฐฐ";
+    cout << endl << "\t\tฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐ";
+    cout << endl;
 }
 
 /***************************************************************************************
-// ESTRUCTURA: void gameLost()
+// FUNCION   : void gameLost()
 // ACCION    : Cartel de anuncio durante el juego.
 // PARAMETROS: Ninguno
-// DEVUELVE:   NADA
+// DEVUELVE  : NADA
 *****************************************************************************************/
 void gameLost()
 {
     cout<<endl;
-    cout<<" ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐ"<<endl;
-    cout<<" ฐฐ                                       ฐฐ"<<endl;
-    cout<<" ฐฐ        ): P E R D I S T E :(          ฐฐ"<<endl;
-    cout<<" ฐฐ                                       ฐฐ"<<endl;
-    cout<<" ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐ"<<endl;
+    cout<<"\t\tฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐ"<<endl;
+    cout<<"\t\tฐฐ                                       ฐฐ"<<endl;
+    cout<<"\t\tฐฐ        ): P E R D I S T E :(          ฐฐ"<<endl;
+    cout<<"\t\tฐฐ                                       ฐฐ"<<endl;
+    cout<<"\t\tฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐ"<<endl;
     cout<<endl;
 
 }
 
-void showBoardHeader()
-{
-    if (boundSize == 4)
-        cout << "\n     =================";
-    else if (boundSize == 6)
-        cout << "\n     =========================";
-    else
-        cout << "\n     =================================";
-}
-
+/***************************************************************************************
+// FUNCION   : void showBoardFooter()
+// ACCION    : Muestra el pie de la tabla de juego.
+// PARAMETROS: Nada
+// DEVUELVE  : Nada
+*****************************************************************************************/
 void showBoardFooter()
 {
     if (boundSize == 4)
-        cout << "\n     =================";
+        cout << "\n\t\t     =================";
     else if (boundSize == 6)
-        cout << "\n     =========================";
+        cout << "\n\t\t     =========================";
     else
-        cout << "\n     =================================";
+        cout << "\n\t\t     =================================";
+}
+
+/***************************************************************************************
+// FUNCION   : void showBoardHeader()
+// ACCION    : Muestra el encabezado de la tabla de juego.
+// PARAMETROS: Nada
+// DEVUELVE  : Nada
+*****************************************************************************************/
+void showBoardHeader()
+{
+    if (boundSize == 4)
+        cout << "\n\t\t     | 1 | 2 | 3 | 4 |";
+    else if (boundSize == 6)
+        cout << "\n\t\t     | 1 | 2 | 3 | 4 | 5 | 6 |";
+    else
+        cout << "\n\t\t     | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |";
+
+    showBoardFooter();
 }
 
 /***************************************************************************************
 // FUNCION   : void initialize(card arrayCards[maxBound][maxBound])
 // ACCION    : Inicializa la matriz en un valor generico.
 // PARAMETROS: card arrayCards[maxBound][maxBound] -> Matriz a inicializar
-// DEVUELVE  : NADA
+// DEVUELVE  : Nada
 *****************************************************************************************/
 void initialize(card arrayCards[maxBound][maxBound])
 {
@@ -197,7 +211,7 @@ void distribute(card arrayCards[maxBound][maxBound])
                 f = sys::random(boundSize);
                 c = sys::random(boundSize);
             }
-            while(!arrayCards[f][c].show);
+            while(! arrayCards[f][c].show);
 
             arrayCards[f][c].card = letters[n];
             arrayCards[f][c].show = false;
@@ -219,7 +233,7 @@ void flash(card arrayCards[maxBound][maxBound])
 
     for (int x = 0; x < boundSize; x++, character++)
     {
-        cout << "\n " << character << " ->| ";
+        cout << "\n\t\t " << character << " ->| ";
 
         for (int y = 0; y < boundSize; y++)
             cout << arrayCards[x][y].card << " | ";
@@ -244,7 +258,7 @@ void showBoard(card arrayCards[maxBound][maxBound])
 
     for (int x = 0; x < boundSize; x++, character++)
     {
-        cout << "\n " << character << " ->| ";
+        cout << "\n\t\t " << character << " ->| ";
 
         for (int y=0; y < boundSize; y++)
             if(arrayCards[x][y].show)
@@ -275,7 +289,7 @@ void showElection(card arrayCards[maxBound][maxBound], int f, int c)
 
     for (int x = 0; x < boundSize; x++, character++)
     {
-        cout << "\n " << character << " -> |";
+        cout << "\n\t\t " << character << " -> |";
 
         for (int y = 0; y < boundSize; y++)
             if(arrayCards[x][y].show)
@@ -334,11 +348,11 @@ int getRowPosition(card arrayCards[maxBound][maxBound], char election, bool must
     do
     {
         sys::cls();
-        cout << "Turno: " << turn <<endl;
+        cout << endl << "\t\tTurno: " << turn << endl;
 
         showBoard(arrayCards);
 
-        cout << "\n\nPresione Z para FLASH\n\nPresione X para SALIR \n\nSeleccione una Posicion: ";
+        cout << "\n\n\t\tPresione Z para FLASH\n\n\t\tPresione X para SALIR \n\n\t\tSeleccione una Posicion: ";
 
         election = sys::getch();
 
@@ -384,10 +398,10 @@ int getRowPosition(card arrayCards[maxBound][maxBound], char election, bool must
             cin.ignore();
             cin.get();
             sys::cls();
-            cout << "Turno: " << turn;
+            cout << endl << "\t\tTurno: " << turn;
             cout<<endl;
             showBoard(arrayCards);
-            cout << "\n\nPresione Z para FLASH\n\nPresione X para SALIR";
+            cout << "\n\n\t\tPresione Z para FLASH\n\n\t\tPresione X para SALIR";
             pass = false;
         }
     }
@@ -443,7 +457,7 @@ int getColPosition(card arrayCards[maxBound][maxBound], char election, bool must
             cin.get();
             sys::cls();
             showBoard(arrayCards);
-            cout << "\n\nYa ha seleccionado la fila\n\nSeleccione una columna: ";
+            cout << "\n\n\t\tYa ha seleccionado la fila\n\n\t\tSeleccione una columna: ";
             election = sys::getch();
         }
     }
@@ -563,7 +577,7 @@ bool gameOver(card arrayCards[maxBound][maxBound], int movements)
 
     sys::cls();
     eog ? gameWon() : gameLost();
-    cout<<"Presione enter para volver al menu."<<endl;
+    cout<<"\t\tPresione enter para volver al menu."<<endl;
     return eog;
 }
 }

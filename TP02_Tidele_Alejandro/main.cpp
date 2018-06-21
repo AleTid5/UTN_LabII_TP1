@@ -75,7 +75,6 @@ int main()
 {
     //_system::welcome();
     _system::showMenu();
-    _system::swMenu();
 
     //--------------------------------------------------------------------------
     // FIN DE LA FUNCION main() SIN ERRORES.
