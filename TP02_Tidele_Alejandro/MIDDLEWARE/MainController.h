@@ -13,7 +13,8 @@
 // DESCRIPCION:
 // Librería intermedia que se encarga de ejecutar las funciones de "cadenas.h".
 /////////////////////////////////////////////////////////////////////////////////
-#include <iostream>
+#include <iostream> // Libreria de flujos de  Entrada/Salida  que contiene  los
+// objetos cin, cout y endl.
 #include "../CSYSTEM/csystem.h" // Libreria multiplataforma.
 #include "GameController.h"     // Libreria controladora del juego.
 #include "string.h"             // Libreria de manejo de cadenas.
@@ -25,8 +26,8 @@ namespace _system
 //***************************************************************************
 // DEFINICION DE LOS PROTOTIPOS A UTILIZAR EN EL SISTEMA
 //===========================================================================
-void takeSecondaryDecision();
 void takeMainDecision();
+void takeSecondaryDecision();
 //***************************************************************************
 // DEFINICION DE LAS FUNCIONES
 //===========================================================================
@@ -89,6 +90,8 @@ void welcome()
     cout << "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°" << endl;
     sys::msleep(1);
     sys::cls();
+
+    sys::randomize(); // Se inicializa la secuencia de numeros aleatorios.
 }
 
 //---------------------------------------------------------------------------
@@ -213,95 +216,10 @@ void showHelp()
 //---------------------------------------------------------------------------
 void error(int origin)
 {
-    cout << "\t\tOpcion incorrecta, intente nuevamente.";
+    cout << "\n\t\tOpcion incorrecta, intente nuevamente.";
     cin.ignore();
     cin.get();
     origin == 1 ? showMenu() : showSubMenu();
-}
-
-//---------------------------------------------------------------------------
-// FUNCION   : void takeSecondaryDecision()
-// ACCION    : Analiza la opcion elegida y toma la decision que sea correspondiente.
-// PARAMETROS: Nada
-// DEVUELVE  : Nada.
-//---------------------------------------------------------------------------
-void takeSecondaryDecision()
-{
-    bool getOut=false;
-
-    while (!getOut)
-    {
-        char _option[1];
-        int turn = 20, aux;
-        bool mustShow = true, mustStop = false,  endOfGame = false;
-        cout << "\t\tIngrese una opcion: ";
-        cin >> _option;
-
-        if (strlen(_option) > 1)
-            error(2);
-
-        switch (_option[0])
-        {
-        case 'a':
-        case 'A':
-        {
-            game::boundSize = 4;
-        }
-        break;
-
-        case 'b':
-        case 'B':
-        {
-            game::boundSize = 6;
-        }
-        break;
-
-        case 'c':
-        case 'C':
-        {
-            game::boundSize = 8;
-        }
-        break;
-
-        case 'z':
-        case 'Z':
-            goodbye();
-            break;
-
-        default:
-            error(2);
-        }
-
-        game::card arrayCards[game::maxBound][game::maxBound];
-        game::distribute(arrayCards);
-
-        while (turn > 0 && !endOfGame)
-        {
-            sys::cls();
-            aux = turn;
-            turn = play(arrayCards, turn, mustShow, &getOut);
-
-            if (turn == -1)
-            {
-                mustShow = false;
-                mustStop=true;
-                turn = aux;
-            }
-
-            endOfGame = game::gameOver(arrayCards, turn);
-
-            if (getOut)
-                break;
-
-            if (! mustStop)
-                sys::pause();
-
-            mustStop = false;
-        }
-
-        sys::cls();
-        showMenu();
-    }
 }
 
 //---------------------------------------------------------------------------
@@ -319,27 +237,74 @@ void takeMainDecision()
     if (strlen(_option) > 1)
         error(1);
 
-    switch (_option[0])
-    {
-    case 'a':
-    case 'A':
+    // Se toma la decision elegida.
+    if (_option[0] == 'a' || _option[0] == 'A')
         showSubMenu();
-        break;
-
-    case 'b':
-    case 'B':
+    else if (_option[0] == 'b' || _option[0] == 'B')
         showHelp();
-        break;
-
-    case 'z':
-    case 'Z':
+    else if (_option[0] == 'z' || _option[0] == 'Z')
         goodbye();
-        break;
-
-    default:
+    else
         error(1);
-        break;
+}
+
+//---------------------------------------------------------------------------
+// FUNCION   : void takeSecondaryDecision()
+// ACCION    : Analiza la opcion elegida y toma la decision que sea correspondiente.
+// PARAMETROS: Nada
+// DEVUELVE  : Nada.
+//---------------------------------------------------------------------------
+void takeSecondaryDecision()
+{
+    char _option[1];
+    cout << "\t\tIngrese una opcion: ";
+    cin >> _option;
+
+    if (strlen(_option) > 1)
+        error(2);
+
+    int aux;
+    bool mustShow = true, mustStop = true,  endOfGame = false, getOut = false;
+
+    // Se configura el juego en base a la decisión del usuario.
+    if (_option[0] == 'a' || _option[0] == 'A')
+        game::configurateGame(1);
+    else if (_option[0] == 'b' || _option[0] == 'B')
+        game::configurateGame(2);
+    else if (_option[0] == 'c' || _option[0] == 'C')
+        game::configurateGame(3);
+    else if (_option[0] == 'z' || _option[0] == 'Z')
+        goodbye();
+    else
+        error(2); // Si es incorrecta la decision, muestra Error.
+
+    game::card arrayCards[game::maxBound][game::maxBound];
+    game::distribute(arrayCards);
+
+    while (game::turn > 0 && !endOfGame) // Mientras que tenga turnos y no haya finalizado el juego..
+    {
+        aux = game::turn; // Guardo el turno en Auxiliar por si ejecuta Flash.
+        game::turn = game::play(arrayCards, mustShow, getOut);
+
+        if (getOut) // Si decide salir, corto el while y lo llevo al menú principal.
+            break;
+
+        if (game::turn == -1) // Si ejecuta Flash se convierte en -1.
+        {
+            mustShow = false; // Ya no se debe mostrar mas el Flash.
+            mustStop = false; // No debe detenerse a esperar Enter.
+            game::turn = aux; // Asigno el turno despues de un Flash.
+        }
+
+        endOfGame = game::gameOver(arrayCards);
+
+        if (mustStop) // Espera y muestra los carteles correspondientes.
+            sys::pause();
+
+        mustStop = true; // La proxima vuelta debe esperar al Enter.
     }
+
+    showMenu(); // Muestro el menú principal.
 }
 }
 //=============================================================================

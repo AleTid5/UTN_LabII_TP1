@@ -43,7 +43,7 @@
 // siguientes, y comente las tres lineas de "COMPILACION EN LINUX".
 //-----------------------------------------------------------------------------
 #ifndef _WIN32
-  # define _WIN32
+# define _WIN32
 #endif
 
 //=============================================================================
@@ -60,21 +60,21 @@
 //                             INCLUSIONES ESTANDAR
 //=============================================================================
 #include <iostream> // Libreria de flujos de  Entrada/Salida  que contiene  los
-                    // objetos cin, cout y endl.
+// objetos cin, cout y endl.
 #include <cstdlib>  // Libreria estandar que contiene la funcion exit().
 
 //*****************************************************************************
 //                             INCLUSIONES PERSONALES
 //=============================================================================
-#include "MIDDLEWARE/MainController.h" // Libreria que controla las acciones del
-                                       // usuario.
+#include "MIDDLEWARE/MainController.h" // Libreria que principal controla las
+// decisiones del usuario.
 //==============================================================================
 // FUNCION PRINCIPAL - PUNTO DE INICIO DEL PROYECTO
 //------------------------------------------------------------------------------
 int main()
 {
-    //_system::welcome();
-    _system::showMenu();
+    //_system::welcome();  // Se muestra un mensaje de bienvenida al juego.
+    _system::showMenu(); // Se muestra el menu principal.
 
     //--------------------------------------------------------------------------
     // FIN DE LA FUNCION main() SIN ERRORES.
